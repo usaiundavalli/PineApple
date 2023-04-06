@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="./css/weatherDashboard.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="https://media.glassdoor.com/sqll/5450364/nerdpine-squarelogo-1645160502959.png"
+          />
+        </div>
+        <div class="items">
+          <a href="/">Home</a>
+          <a href="/dashboard">Contact</a>
+          <a href="/upload">Gallery</a>
+          <a href="/weather">Weather</a>
+        </div>
+        <div class="other"><a href="/logout"><button>Log out</button></a></div>
+      </nav>
+    </header>
+    <form method="POST" action="/weather">
+      <input
+        type="text"
+        name="myInput"
+        list="europe-countries"
+        placeholder="Enter country..."
+      />
+      <datalist id="europe-countries">
+        <option>New York,us</option>
+        <option>India,IN</option>
+        <option>Germany,DE</option>
+        <option>United States,US</option>
+        <option>Canada ,CA</option>
+        <option>Australia,AU</option>
+        <option>France,FR</option>
+        <option>Germany,DE</option>
+        <option>Japan,JP</option>
+        <option>Brazil,BR</option>
+        <option>Mexico,MX</option>
+        <option>Russia,RU</option>
+        <option>Italy,IT</option>
+        <option>Spain,ES</option>
+        <option>China,CN</option>
+        <option>Indonesia,ID</option>
+        <option>Turkey,TR</option>
+        <option>Saudi Arabia,SA</option>
+        <option>Argentina,AR</option>
+      </datalist>
+      <button type="submit">Submit</button>
+    </form>
+    <p><%= locals.error%></p>
+<br><br>
+<center>
+<table>
+    <tr>
+      <td><b>countryName<b></td>
+      <td><i><%=locals.countryName%></i></td>
+    </tr>
+    <tr>
+        <td><b>date<b></td>
+        <td><i><%=locals.date%></i></td>
+      </tr>
+    <tr>
+        <td><b>lon,lat</b></td>
+        <td><i><%=locals.lonlat%></i></td>
+    </tr>
+    <tr>
+        <td><b>temperature</b></td>
+        <td><i><%=locals.temperature%></i></td>
+    </tr>
+    <tr>
+        <td><b>pressure</b></td>
+        <td><i><%=locals.pressure%></i></td>
+    </tr>
+    <tr>
+        <td><b>humidity</b></td>
+        <td><i><%=locals.humidity%></i></td>
+    </tr>
+    <tr>
+        <td><b>sunrise</b></td>
+        <td><i><%=locals.sunrise%></i></td>
+    </tr>
+    <tr>
+        <td><b>sunset</b></td>
+        <td><i><%=locals.sunset%></i></td>
+    </tr>
+    <tr>
+        <td><b>speed,deg,gust</b></td>
+        <td><i><%=locals.speed_deg_gust%></i></td>
+    </tr>
+    
+    <tr>
+        <td><b>description</b></td>
+        <td><i><%=locals.description%></i></td>
+    </tr>
+  </table>
+</center>
+</body>
+</html>
+

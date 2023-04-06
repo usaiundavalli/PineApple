@@ -1,0 +1,37 @@
+<!-- gallery.ejs -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="./gallery.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="https://media.glassdoor.com/sqll/5450364/nerdpine-squarelogo-1645160502959.png"
+          />
+        </div>
+        <div class="items">
+          <a href="/">Home</a>
+          <a href="/dashboard">Contact</a>
+          <a href="/upload">Upload</a>
+          <a href="/weather">Weather</a>
+        </div>
+
+        <div class="other">
+          <a  href="/logout" style="text-decoration: none"
+            ><button>Log out</button></a >
+        </div>
+      </nav>
+    </header>
+    <h1>Photo Gallery</h1>
+ <center>   <% images.forEach(function(image) { %>
+      <img src="<%= image %>"  height="200px" style="aspect-ratio: 3/2; object-fit: contain; mix-blend-mode: color-burn;" decoding="async">
+    <% }); %></center>
+    <br>
+    <a href="/upload">Upload another image</a>
+  </body>
+</html>

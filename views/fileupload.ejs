@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image-Upload</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./fileupload.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+            <img
+              src="https://media.glassdoor.com/sqll/5450364/nerdpine-squarelogo-1645160502959.png"
+            />
+          </div>
+          <div class="items">
+            <a href="/">Home</a>
+            <a href="/dashboard">Contact</a>
+            <a href="/upload">Gallery</a>
+            <a href="/weather">Weather</a>
+          </div>
+  
+          <div class="other">
+            <a style="text-decoration: none" href="/logout"
+              ><button>Log out</button></a
+            >
+          </div>
+        </nav>
+      </header>
+    <div class="container mt-8">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white">
+                        <h3>Image-upload</h3>
+                    </div>
+                    <div class="card-body">
+                        <form  action="/upload" method="post"  id="upload-form" enctype="multipart/form-data" >
+                            <div class="mb-10">
+                                <input class="form-control" type="file" name="myImages" id="formFile" multiple>
+                                <label for="formFile" class="form-label"></label>
+                              </div>
+                              <div class="upload">
+                                <input type="submit" value="Upload" class="btn btn-primary btn-sm">
+                                
+                              </div>
+                            
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if (locals.msg) { %>
+        <p><%= locals.msg %></p>
+      <% } %>
+
+
+     <% if (locals.file) { %>
+        <!-- <h2>Uploaded Image:</h2>
+       <img src="<%= file %>" width="300"> -->
+      <% } %> 
+ <br>
+ <br>
+    <button class="gallery"> <a href="/gallery">View Gallery</a></button>
+
+
+    
+</body>
+</html>
